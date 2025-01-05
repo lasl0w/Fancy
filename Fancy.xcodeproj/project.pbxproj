@@ -11,6 +11,9 @@
 		F18CABC32CE156EA00C3F713 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18CABC22CE156EA00C3F713 /* ContentView.swift */; };
 		F18CABC52CE156EB00C3F713 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F18CABC42CE156EB00C3F713 /* Assets.xcassets */; };
 		F18CABC82CE156EB00C3F713 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F18CABC72CE156EB00C3F713 /* Preview Assets.xcassets */; };
+		F18CABD02CE1575700C3F713 /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = F18CABCF2CE1575700C3F713 /* Inject */; };
+		F18CABD22CE1B9E200C3F713 /* istockphoto-1151474305-612x612.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F18CABD12CE1B9E200C3F713 /* istockphoto-1151474305-612x612.jpg */; };
+		F1DD98212CFBA2280002B3F9 /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DD981F2CFBA2280002B3F9 /* CachedAsyncImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,8 @@
 		F18CABC22CE156EA00C3F713 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F18CABC42CE156EB00C3F713 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F18CABC72CE156EB00C3F713 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F18CABD12CE1B9E200C3F713 /* istockphoto-1151474305-612x612.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "istockphoto-1151474305-612x612.jpg"; sourceTree = "<group>"; };
+		F1DD981F2CFBA2280002B3F9 /* CachedAsyncImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F18CABD02CE1575700C3F713 /* Inject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,9 +57,11 @@
 		F18CABBF2CE156EA00C3F713 /* Fancy */ = {
 			isa = PBXGroup;
 			children = (
+				F1DD981F2CFBA2280002B3F9 /* CachedAsyncImage.swift */,
 				F18CABC02CE156EA00C3F713 /* FancyApp.swift */,
 				F18CABC22CE156EA00C3F713 /* ContentView.swift */,
 				F18CABC42CE156EB00C3F713 /* Assets.xcassets */,
+				F18CABD12CE1B9E200C3F713 /* istockphoto-1151474305-612x612.jpg */,
 				F18CABC62CE156EB00C3F713 /* Preview Content */,
 			);
 			path = Fancy;
@@ -83,6 +91,9 @@
 			dependencies = (
 			);
 			name = Fancy;
+			packageProductDependencies = (
+				F18CABCF2CE1575700C3F713 /* Inject */,
+			);
 			productName = Fancy;
 			productReference = F18CABBD2CE156EA00C3F713 /* Fancy.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +122,9 @@
 				Base,
 			);
 			mainGroup = F18CABB42CE156EA00C3F713;
+			packageReferences = (
+				F18CABCE2CE1575700C3F713 /* XCRemoteSwiftPackageReference "Inject" */,
+			);
 			productRefGroup = F18CABBE2CE156EA00C3F713 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,6 +139,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F18CABD22CE1B9E200C3F713 /* istockphoto-1151474305-612x612.jpg in Resources */,
 				F18CABC82CE156EB00C3F713 /* Preview Assets.xcassets in Resources */,
 				F18CABC52CE156EB00C3F713 /* Assets.xcassets in Resources */,
 			);
@@ -138,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F18CABC32CE156EA00C3F713 /* ContentView.swift in Sources */,
+				F1DD98212CFBA2280002B3F9 /* CachedAsyncImage.swift in Sources */,
 				F18CABC12CE156EA00C3F713 /* FancyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +301,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-interposable",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.monty.Fancy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -344,6 +364,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F18CABCE2CE1575700C3F713 /* XCRemoteSwiftPackageReference "Inject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzysztofzablocki/Inject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F18CABCF2CE1575700C3F713 /* Inject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F18CABCE2CE1575700C3F713 /* XCRemoteSwiftPackageReference "Inject" */;
+			productName = Inject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F18CABB52CE156EA00C3F713 /* Project object */;
 }

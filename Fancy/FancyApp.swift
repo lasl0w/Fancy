@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
+import Inject
 
 @main
 struct FancyApp: App {
+    
+
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
